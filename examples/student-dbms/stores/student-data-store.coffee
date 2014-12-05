@@ -7,19 +7,22 @@ class StudentDataStore extends stormify.DS
 
         super opts
         store = this
-        @contains 'addresses',
-            model: require '../models/address-model'           
+        @contains 'address',
+            model: require '../models/address-model'
+            controller: require '../controllers/address-controller'
 
-        @contains 'courses',
-            model: require '../models/course-model'            
+        @contains 'course',
+            model: require '../models/course-model'
+            controller: require '../controllers/course-controller'
 
         @contains 'students',
             model: require '../models/student-model'
             controller: require '../controllers/student-controller'
 
-        @contains 'marks',
-            model: require '../models/mark-model'            
+        @contains 'mark',
+            model: require '../models/mark-model'
+            controller: require '../controllers/mark-controller'
 
-        @initialize()                        
+        @initialize()
 
 module.exports = StudentDataStore
